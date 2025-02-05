@@ -1,0 +1,19 @@
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: Pretendard;
+  src:
+    local('Pretendard'),
+    url(/fonts/Pretendard-Bold.woff2) format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: Pretendard;
+  src:
+    local('Pretendard'),
+    url(/fonts/Pretendard-Regular.woff2) format('woff2');
+  font-display: swap;
+}
