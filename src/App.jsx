@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import cardApplication from './cardApplication';
 import cardRecharge from './cardRecharge';
 import usageGuide from './usageGuide';
@@ -19,9 +19,11 @@ const tabs = [
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const tabRefs = useRef([]);
 
   const handleClick = (index) => {
     setActiveIndex(index);
+    tabRefs.current[index]?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -32,6 +34,7 @@ function App() {
           {tabs.map((tab, index) => {
             return (
               <button
+                ref={(el) => (tabRefs.current[index] = el)}
                 key={tab.key}
                 type="button"
                 className={`relative flex-auto cursor-pointer px-2 py-4 whitespace-nowrap ${
