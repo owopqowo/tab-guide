@@ -1,7 +1,7 @@
 import Article from './Article';
 import { applySections, typesSections, periodSections } from './sections';
 
-function cardApplication() {
+function CardApplication() {
   return (
     <>
       <nav className="overflow-auto py-2 shadow-lg shadow-neutral-200/50">
@@ -24,4 +24,4 @@ function cardApplication() {
   );
 }
 
-export default cardApplication;
+export default CardApplication;

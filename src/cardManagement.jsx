@@ -1,4 +1,4 @@
-function cardManagement() {
+function CardManagement() {
   return (
     <>
       <nav className="overflow-auto py-2 shadow-lg shadow-neutral-200/50">
@@ -27,4 +27,4 @@ function cardManagement() {
   );
 }
 
-export default cardManagement;
+export default CardManagement;
