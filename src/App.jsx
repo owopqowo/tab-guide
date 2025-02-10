@@ -1,20 +1,23 @@
 import { useRef, useState } from 'react';
-import CardApplication from './CardApplication';
-import CardRecharge from './CardRecharge';
-import UsageGuide from './UsageGuide';
-import BalanceCheck from './BalanceCheck';
-import CardManagement from './CardManagement';
-import PaymentRefund from './PaymentRefund';
-import ConvenienceFeatures from './ConvenienceFeatures';
+import TabPanel from './TabPanel';
+import {
+  cardApplication,
+  cardRecharge,
+  usageGuide,
+  balanceCheck,
+  cardManagement,
+  paymentRefund,
+  convenienceFeatures,
+} from './sections';
 
 const tabs = [
-  { key: 'cardApplication', label: '카드 신청', children: CardApplication() },
-  { key: 'cardRecharge', label: '카드 충전', children: CardRecharge() },
-  { key: 'usageGuide', label: '사용 방법', children: UsageGuide() },
-  { key: 'balanceCheck', label: '잔액 확인', children: BalanceCheck() },
-  { key: 'cardManagement', label: '카드 관리', children: CardManagement() },
-  { key: 'paymentRefund', label: '결제 및 환불', children: PaymentRefund() },
-  { key: 'convenienceFeatures', label: '편의기능', children: ConvenienceFeatures() },
+  { key: 'cardApplication', label: '카드 신청', children: <TabPanel sectionsData={cardApplication} /> },
+  { key: 'cardRecharge', label: '카드 충전', children: <TabPanel sectionsData={cardRecharge} /> },
+  { key: 'usageGuide', label: '사용 방법', children: <TabPanel sectionsData={usageGuide} /> },
+  { key: 'balanceCheck', label: '잔액 확인', children: <TabPanel sectionsData={balanceCheck} /> },
+  { key: 'cardManagement', label: '카드 관리', children: <TabPanel sectionsData={cardManagement} /> },
+  { key: 'paymentRefund', label: '결제 및 환불', children: <TabPanel sectionsData={paymentRefund} /> },
+  { key: 'convenienceFeatures', label: '편의기능', children: <TabPanel sectionsData={convenienceFeatures} /> },
 ];
 
 function App() {
