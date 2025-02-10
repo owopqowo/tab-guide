@@ -1,20 +1,20 @@
 import { useRef, useState } from 'react';
-import cardApplication from './cardApplication';
-import cardRecharge from './cardRecharge';
-import usageGuide from './usageGuide';
-import balanceCheck from './balanceCheck';
-import cardManagement from './cardManagement';
-import paymentRefund from './paymentRefund';
-import convenienceFeatures from './convenienceFeatures';
+import CardApplication from './CardApplication';
+import CardRecharge from './CardRecharge';
+import UsageGuide from './UsageGuide';
+import BalanceCheck from './BalanceCheck';
+import CardManagement from './CardManagement';
+import PaymentRefund from './PaymentRefund';
+import ConvenienceFeatures from './ConvenienceFeatures';
 
 const tabs = [
-  { key: 'cardApplication', label: '카드 신청', children: cardApplication() },
-  { key: 'cardRecharge', label: '카드 충전', children: cardRecharge() },
-  { key: 'usageGuide', label: '사용 방법', children: usageGuide() },
-  { key: 'balanceCheck', label: '잔액 확인', children: balanceCheck() },
-  { key: 'cardManagement', label: '카드 관리', children: cardManagement() },
-  { key: 'paymentRefund', label: '결제 및 환불', children: paymentRefund() },
-  { key: 'convenienceFeatures', label: '편의기능', children: convenienceFeatures() },
+  { key: 'cardApplication', label: '카드 신청', children: CardApplication() },
+  { key: 'cardRecharge', label: '카드 충전', children: CardRecharge() },
+  { key: 'usageGuide', label: '사용 방법', children: UsageGuide() },
+  { key: 'balanceCheck', label: '잔액 확인', children: BalanceCheck() },
+  { key: 'cardManagement', label: '카드 관리', children: CardManagement() },
+  { key: 'paymentRefund', label: '결제 및 환불', children: PaymentRefund() },
+  { key: 'convenienceFeatures', label: '편의기능', children: ConvenienceFeatures() },
 ];
 
 function App() {

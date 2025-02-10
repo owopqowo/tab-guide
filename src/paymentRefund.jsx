@@ -1,4 +1,4 @@
-function paymentRefund() {
+function PaymentRefund() {
   return (
     <>
       <nav className="overflow-auto py-2 shadow-lg shadow-neutral-200/50">
@@ -21,4 +21,4 @@ function paymentRefund() {
   );
 }
 
-export default paymentRefund;
+export default PaymentRefund;

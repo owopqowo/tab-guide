@@ -1,4 +1,4 @@
-function cardRecharge() {
+function CardRecharge() {
   return (
     <>
       <nav className="overflow-auto py-2 shadow-lg shadow-neutral-200/50">
@@ -33,4 +33,4 @@ function cardRecharge() {
   );
 }
 
-export default cardRecharge;
+export default CardRecharge;
