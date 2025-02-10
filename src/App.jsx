@@ -27,6 +27,7 @@ function App() {
   const handleClick = (index) => {
     setActiveIndex(index);
     tabRefs.current[index]?.scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo({ top: 0 });
   };
 
   return (
