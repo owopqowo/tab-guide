@@ -1,3 +1,6 @@
+import Article from './Article';
+import { applySections, typesSections, periodSections } from './sections';
+
 function cardApplication() {
   return (
     <>
@@ -14,15 +17,9 @@ function cardApplication() {
           </a>
         </div>
       </nav>
-      <article id="apply" className="p-5 pt-10">
-        <h2 className="text-2xl font-bold">신청 방법</h2>
-      </article>
-      <article id="types" className="p-5">
-        <h2 className="text-2xl font-bold">카드 종류</h2>
-      </article>
-      <article id="period" className="p-5 pb-10">
-        <h2 className="text-2xl font-bold">발급 기간</h2>
-      </article>
+      <Article id="apply" title="신청 방법" sections={applySections} />
+      <Article id="types" title="카드 종류" sections={typesSections} />
+      <Article id="period" title="발급 기간" sections={periodSections} />
     </>
   );
 }

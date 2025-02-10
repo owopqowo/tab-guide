@@ -9,3 +9,12 @@
   clip-path: circle(0);
   @apply absolute -m-px size-px overflow-hidden border-0 p-0 whitespace-nowrap;
 }
+
+.counter {
+  counter-reset: counter;
+}
+
+.counter > *::before {
+  content: counter(counter, decimal-leading-zero);
+  counter-increment: counter;
+}
