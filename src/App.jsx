@@ -37,7 +37,7 @@ function App() {
     <>
       <header id="header" className="sticky top-0 bg-white">
         <h1 className="a11y-hidden">이용 안내</h1>
-        <nav className="overflow-auto border-b border-neutral-200">
+        <nav className="overflow-auto border-b border-neutral-200" role="tablist">
           <div className="flex w-fit px-3">
             {tabs.map((tab, index) => {
               return (
@@ -51,6 +51,9 @@ function App() {
                       : ''
                   }`}
                   onClick={() => handleClick(index)}
+                  role="tab"
+                  aria-selected={activeIndex === index}
+                  aria-controls={tab.key}
                 >
                   {tab.label}
                 </button>
@@ -63,7 +66,11 @@ function App() {
           links={tabs[activeIndex].data.map(({ id, label }) => ({ key: id, href: `#${id}`, label }))}
         />
       </header>
-      <TabPanel setSubActiveIndex={setSubActiveIndex} sectionsData={tabs[activeIndex].data} />
+      <TabPanel
+        id={tabs[activeIndex].key}
+        setSubActiveIndex={setSubActiveIndex}
+        sectionsData={tabs[activeIndex].data}
+      />
     </>
   );
 }
