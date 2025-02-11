@@ -35,7 +35,7 @@ function App() {
 
   return (
     <>
-      <header className="sticky top-0 bg-white">
+      <header id="header" className="sticky top-0 bg-white">
         <h1 className="a11y-hidden">이용 안내</h1>
         <nav className="overflow-auto border-b border-neutral-200">
           <div className="flex w-fit px-3">
