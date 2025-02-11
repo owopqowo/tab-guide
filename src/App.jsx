@@ -59,12 +59,11 @@ function App() {
           </div>
         </nav>
         <SubNav
-          onSubNavClick={setSubActiveIndex}
           subActiveIndex={subActiveIndex}
           links={tabs[activeIndex].data.map(({ id, label }) => ({ key: id, href: `#${id}`, label }))}
         />
       </header>
-      <TabPanel sectionsData={tabs[activeIndex].data} />
+      <TabPanel setSubActiveIndex={setSubActiveIndex} sectionsData={tabs[activeIndex].data} />
     </>
   );
 }
