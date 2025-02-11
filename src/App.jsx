@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import TabPanel from './TabPanel';
 import SubNav from './SubNav';
 import {
@@ -25,6 +25,7 @@ const tabs = [
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [subActiveIndex, setSubActiveIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
   const tabRefs = useRef([]);
 
   const handleClick = (index) => {
@@ -37,6 +38,21 @@ function App() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > document.querySelector('#header').offsetHeight) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -76,12 +92,14 @@ function App() {
         setSubActiveIndex={setSubActiveIndex}
         sectionsData={tabs[activeIndex].data}
       />
-      <button
-        type="button"
-        className="fixed right-4 bottom-4 cursor-pointer rounded-full border border-neutral-200 p-3"
-      >
-        <IconArrowTop onClick={scrollToTop} width={50} height={50} className="h-8 w-8 fill-gray-800" />
-      </button>
+      {isVisible && (
+        <button
+          type="button"
+          className="fixed right-4 bottom-4 cursor-pointer rounded-full border border-neutral-200 p-3"
+        >
+          <IconArrowTop onClick={scrollToTop} width={50} height={50} className="h-8 w-8 fill-gray-800" />
+        </button>
+      )}
     </>
   );
 }
