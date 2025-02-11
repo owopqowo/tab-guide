@@ -21,6 +21,7 @@ function SubNav({ links, subActiveIndex }) {
               subActiveIndex === index ? 'bg-black text-white' : ''
             }`}
             onClick={(event) => handleClick(event, link.href)}
+            aria-selected={subActiveIndex === index}
           >
             {link.label}
           </a>
