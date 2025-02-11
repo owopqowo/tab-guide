@@ -1,7 +1,6 @@
-function SubNav({ links, onSubNavClick, subActiveIndex }) {
-  const handleClick = (event, index, id) => {
+function SubNav({ links, subActiveIndex }) {
+  const handleClick = (event, id) => {
     event.preventDefault();
-    onSubNavClick(index);
     const targetElement = document.querySelector(id);
     const headerHeight = document.querySelector('#header')?.offsetHeight || 0;
 
@@ -21,7 +20,7 @@ function SubNav({ links, onSubNavClick, subActiveIndex }) {
             className={`mx-1 flex-auto rounded-full px-2 py-1 text-sm whitespace-nowrap ${
               subActiveIndex === index ? 'bg-black text-white' : ''
             }`}
-            onClick={(event) => handleClick(event, index, link.href)}
+            onClick={(event) => handleClick(event, link.href)}
           >
             {link.label}
           </a>

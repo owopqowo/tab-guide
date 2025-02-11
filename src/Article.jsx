@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-function Article({ id, title, sections }) {
+function Article({ id, title, sections, setSubActiveIndex }) {
+  useEffect(() => {
+    const articles = document.querySelectorAll('.article');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            articles.forEach((article, index) => {
+              if (entry.target === article) setSubActiveIndex(index);
+            });
+          }
+        });
+      },
+      { rootMargin: '-50%', threshold: 0 },
+    );
+
+    return () => {
+      articles.forEach((article) => observer.observe(article));
+    };
+  }, []);
+
   return (
-    <article id={id} className="p-5 first-of-type:pt-10 last-of-type:pb-10">
+    <article id={id} className="article p-5 first-of-type:pt-10 last-of-type:pb-10">
       <h2 className="text-center text-3xl font-bold">{title}</h2>
       <div className="counter">
         {sections.map((section) => (
