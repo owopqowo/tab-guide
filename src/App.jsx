@@ -10,6 +10,7 @@ import {
   paymentRefund,
   convenienceFeatures,
 } from './sections';
+import IconArrowTop from './arrow-up.svg?react';
 
 const tabs = [
   { key: 'cardApplication', label: '카드 신청', data: cardApplication },
@@ -31,6 +32,10 @@ function App() {
     setSubActiveIndex(0);
     tabRefs.current[index]?.scrollIntoView({ behavior: 'smooth' });
     window.scrollTo({ top: 0 });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -71,6 +76,12 @@ function App() {
         setSubActiveIndex={setSubActiveIndex}
         sectionsData={tabs[activeIndex].data}
       />
+      <button
+        type="button"
+        className="fixed right-4 bottom-4 cursor-pointer rounded-full border border-neutral-200 p-3"
+      >
+        <IconArrowTop onClick={scrollToTop} width={50} height={50} className="h-8 w-8 fill-gray-800" />
+      </button>
     </>
   );
 }
