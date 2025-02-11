@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import TabPanel from './TabPanel';
+import SubNav from './SubNav';
 import {
   cardApplication,
   cardRecharge,
@@ -10,25 +11,104 @@ import {
   convenienceFeatures,
 } from './sections';
 
-const tabs = [
-  { key: 'cardApplication', label: '카드 신청', children: <TabPanel sectionsData={cardApplication} /> },
-  { key: 'cardRecharge', label: '카드 충전', children: <TabPanel sectionsData={cardRecharge} /> },
-  { key: 'usageGuide', label: '사용 방법', children: <TabPanel sectionsData={usageGuide} /> },
-  { key: 'balanceCheck', label: '잔액 확인', children: <TabPanel sectionsData={balanceCheck} /> },
-  { key: 'cardManagement', label: '카드 관리', children: <TabPanel sectionsData={cardManagement} /> },
-  { key: 'paymentRefund', label: '결제 및 환불', children: <TabPanel sectionsData={paymentRefund} /> },
-  { key: 'convenienceFeatures', label: '편의기능', children: <TabPanel sectionsData={convenienceFeatures} /> },
-];
-
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [subActiveIndex, setSubActiveIndex] = useState(0);
   const tabRefs = useRef([]);
 
   const handleClick = (index) => {
     setActiveIndex(index);
+    setSubActiveIndex(0);
     tabRefs.current[index]?.scrollIntoView({ behavior: 'smooth' });
     window.scrollTo({ top: 0 });
   };
+
+  const tabs = [
+    {
+      key: 'cardApplication',
+      label: '카드 신청',
+      nav: (
+        <SubNav
+          onSubNavClick={setSubActiveIndex}
+          subActiveIndex={subActiveIndex}
+          links={cardApplication.map(({ id, label }) => ({ key: id, href: `#${id}`, label }))}
+        />
+      ),
+      children: <TabPanel subActiveIndex={subActiveIndex} sectionsData={cardApplication} />,
+    },
+    {
+      key: 'cardRecharge',
+      label: '카드 충전',
+      nav: (
+        <SubNav
+          onSubNavClick={setSubActiveIndex}
+          subActiveIndex={subActiveIndex}
+          links={cardRecharge.map(({ id, label }) => ({ key: id, href: `#${id}`, label }))}
+        />
+      ),
+      children: <TabPanel subActiveIndex={subActiveIndex} sectionsData={cardRecharge} />,
+    },
+    {
+      key: 'usageGuide',
+      label: '사용 방법',
+      nav: (
+        <SubNav
+          onSubNavClick={setSubActiveIndex}
+          subActiveIndex={subActiveIndex}
+          links={usageGuide.map(({ id, label }) => ({ key: id, href: `#${id}`, label }))}
+        />
+      ),
+      children: <TabPanel subActiveIndex={subActiveIndex} sectionsData={usageGuide} />,
+    },
+    {
+      key: 'balanceCheck',
+      label: '잔액 확인',
+      nav: (
+        <SubNav
+          onSubNavClick={setSubActiveIndex}
+          subActiveIndex={subActiveIndex}
+          links={balanceCheck.map(({ id, label }) => ({ key: id, href: `#${id}`, label }))}
+        />
+      ),
+      children: <TabPanel subActiveIndex={subActiveIndex} sectionsData={balanceCheck} />,
+    },
+    {
+      key: 'cardManagement',
+      label: '카드 관리',
+      nav: (
+        <SubNav
+          onSubNavClick={setSubActiveIndex}
+          subActiveIndex={subActiveIndex}
+          links={cardManagement.map(({ id, label }) => ({ key: id, href: `#${id}`, label }))}
+        />
+      ),
+      children: <TabPanel subActiveIndex={subActiveIndex} sectionsData={cardManagement} />,
+    },
+    {
+      key: 'paymentRefund',
+      label: '결제 및 환불',
+      nav: (
+        <SubNav
+          onSubNavClick={setSubActiveIndex}
+          subActiveIndex={subActiveIndex}
+          links={paymentRefund.map(({ id, label }) => ({ key: id, href: `#${id}`, label }))}
+        />
+      ),
+      children: <TabPanel subActiveIndex={subActiveIndex} sectionsData={paymentRefund} />,
+    },
+    {
+      key: 'convenienceFeatures',
+      label: '편의기능',
+      nav: (
+        <SubNav
+          onSubNavClick={setSubActiveIndex}
+          subActiveIndex={subActiveIndex}
+          links={convenienceFeatures.map(({ id, label }) => ({ key: id, href: `#${id}`, label }))}
+        />
+      ),
+      children: <TabPanel subActiveIndex={subActiveIndex} sectionsData={convenienceFeatures} />,
+    },
+  ];
 
   return (
     <>
@@ -55,6 +135,7 @@ function App() {
             })}
           </div>
         </nav>
+        {tabs[activeIndex].nav}
       </header>
       {tabs[activeIndex].children}
     </>

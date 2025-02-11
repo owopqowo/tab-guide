@@ -1,14 +1,15 @@
-import React from 'react';
-
-function SubNav({ links }) {
+function SubNav({ links, onSubNavClick, subActiveIndex }) {
   return (
-    <nav className="sticky top-14.25 overflow-auto bg-white py-2 shadow-lg shadow-neutral-200/50">
+    <nav className="py-2 shadow-lg shadow-neutral-200/50">
       <div className="-mx-1 flex w-fit px-3">
-        {links.map((link) => (
+        {links.map((link, index) => (
           <a
             key={link.key}
             href={link.href}
-            className="mx-1 flex-auto rounded-full px-2 py-1 text-sm whitespace-nowrap"
+            className={`mx-1 flex-auto rounded-full px-2 py-1 text-sm whitespace-nowrap ${
+              subActiveIndex === index ? 'bg-black text-white' : ''
+            }`}
+            onClick={() => onSubNavClick(index)}
           >
             {link.label}
           </a>
