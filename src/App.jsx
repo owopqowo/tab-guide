@@ -93,7 +93,7 @@ function App() {
       />
       <button
         type="button"
-        className={`fixed right-4 bottom-4 cursor-pointer rounded-full border border-neutral-200 p-3 transition-all ${isVisible ? 'visible opacity-100' : 'invisible opacity-0'}`}
+        className={`fixed right-4 bottom-4 cursor-pointer rounded-full border border-neutral-200 p-3 bg-white transition-all ${isVisible ? 'visible opacity-100' : 'invisible opacity-0'}`}
       >
         <IconArrowTop onClick={scrollToTop} width={50} height={50} className="h-8 w-8 fill-gray-800" />
       </button>
