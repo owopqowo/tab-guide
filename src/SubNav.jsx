@@ -17,7 +17,7 @@ function SubNav({ links, subActiveIndex }) {
           <a
             key={link.key}
             href={link.href}
-            className={`mx-1 flex-auto rounded-full px-2 py-1 text-sm whitespace-nowrap ${
+            className={`mx-1 flex-auto rounded-full px-2 py-1 text-sm whitespace-nowrap transition ${
               subActiveIndex === index ? 'bg-black text-white' : ''
             }`}
             onClick={(event) => handleClick(event, link.href)}
