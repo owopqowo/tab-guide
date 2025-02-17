@@ -67,10 +67,8 @@ function App() {
                   ref={(el) => (tabRefs.current[index] = el)}
                   key={tab.key}
                   type="button"
-                  className={`relative flex-auto cursor-pointer px-2 py-4 whitespace-nowrap ${
-                    activeIndex === index
-                      ? "font-bold after:absolute after:right-0 after:bottom-0 after:left-0 after:h-1 after:w-full after:bg-black after:content-['']"
-                      : ''
+                  className={`relative flex-auto cursor-pointer px-2 py-4 whitespace-nowrap after:absolute after:right-0 after:bottom-0 after:left-0 after:h-1 after:w-full after:bg-black after:content-[''] ${
+                    activeIndex === index ? 'font-bold after:bg-black' : 'after:bg-transparent'
                   }`}
                   onClick={() => handleClick(index)}
                   role="tab"
