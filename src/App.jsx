@@ -47,6 +47,7 @@ function App() {
         setIsVisible(false);
       }
     };
+
     window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -92,14 +93,12 @@ function App() {
         setSubActiveIndex={setSubActiveIndex}
         sectionsData={tabs[activeIndex].data}
       />
-      {isVisible && (
-        <button
-          type="button"
-          className="fixed right-4 bottom-4 cursor-pointer rounded-full border border-neutral-200 p-3"
-        >
-          <IconArrowTop onClick={scrollToTop} width={50} height={50} className="h-8 w-8 fill-gray-800" />
-        </button>
-      )}
+      <button
+        type="button"
+        className={`fixed right-4 bottom-4 cursor-pointer rounded-full border border-neutral-200 p-3 transition-all ${isVisible ? 'visible opacity-100' : 'invisible opacity-0'}`}
+      >
+        <IconArrowTop onClick={scrollToTop} width={50} height={50} className="h-8 w-8 fill-gray-800" />
+      </button>
     </>
   );
 }
