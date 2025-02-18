@@ -10,7 +10,7 @@ import {
   paymentRefund,
   convenienceFeatures,
 } from './sections';
-import IconArrowTop from './arrow-up.svg?react';
+import IconArrowUp from './arrow-up.svg?react';
 
 const tabs = [
   { key: 'cardApplication', label: '카드 신청', data: cardApplication },
@@ -94,8 +94,9 @@ function App() {
       <button
         type="button"
         className={`fixed right-4 bottom-4 cursor-pointer rounded-full border border-neutral-200 p-3 bg-white transition-all ${isVisible ? 'visible opacity-100' : 'invisible opacity-0'}`}
+        onClick={scrollToTop}
       >
-        <IconArrowTop onClick={scrollToTop} width={50} height={50} className="h-8 w-8 fill-gray-800" />
+        <IconArrowUp className="h-8 w-8 fill-gray-800" />
       </button>
     </>
   );
