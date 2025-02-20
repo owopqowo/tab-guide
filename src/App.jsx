@@ -28,8 +28,13 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [subActiveIndex, setSubActiveIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [isdarkMode, setIsDarkMode] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const [isDarkTheme, setIsDarkTheme] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
   const tabRefs = useRef([]);
+
+  const setTheme = (isDarkTheme) => {
+    const htmlElement = document.documentElement;
+    htmlElement.setAttribute("data-theme", isDarkTheme ? "dark" : "light");
+  }
 
   const handleClick = (index) => {
     setActiveIndex(index);
@@ -43,23 +48,14 @@ function App() {
   };
 
   const handleCheck = () => {
-    setIsDarkMode((currentTheme) => {
-      const htmlElement = document.documentElement;
-      const updatedTheme = !currentTheme;
-  
-      if (updatedTheme) {
-        htmlElement.setAttribute("data-theme", "dark");
-      } else {
-        htmlElement.setAttribute("data-theme", "light");
-      }
-  
+    setIsDarkTheme((prevTheme) => {
+      const updatedTheme = !prevTheme;
+      setTheme(updatedTheme);
       return updatedTheme;
     });
   };
 
   useEffect(() => {
-    const htmlElement = document.documentElement;
-
     const handleScroll = () => {
       if (window.scrollY > document.querySelector('#header').offsetHeight) {
         setIsVisible(true);
@@ -70,11 +66,7 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
 
-    if (isdarkMode) {
-      htmlElement.setAttribute("data-theme", "dark");
-    } else {
-      htmlElement.setAttribute("data-theme", "light");
-    }
+    setTheme(isDarkTheme);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -87,11 +79,11 @@ function App() {
         <div className="flex items-center justify-between px-3 py-1.5">
           <h1 className="text-xl">이용 안내</h1>
           <label
-            className={`relative z-0 flex h-7.5 w-15 cursor-pointer items-center justify-between rounded-full border-1 border-neutral-400 dark:border-neutral-500 p-0.5 before:absolute before:-z-10 before:h-6 before:w-6 before:rounded-full before:bg-black dark:before:bg-white before:transition-transform before:content-[''] ${isdarkMode ? 'before:translate-x-7.5' : ''}`}
+            className={`relative z-0 flex h-7.5 w-15 cursor-pointer items-center justify-between rounded-full border-1 border-neutral-400 dark:border-neutral-500 p-0.5 before:absolute before:-z-10 before:h-6 before:w-6 before:rounded-full before:bg-black dark:before:bg-white before:transition-transform before:content-[''] ${isDarkTheme ? 'before:translate-x-7.5' : ''}`}
           >
-            <input type="checkbox" className="a11y-hidden" checked={isdarkMode} onChange={handleCheck} />
-            <IconSun className={`mx-[3px] h-4.5 w-4.5 ${isdarkMode ? 'fill-neutral-400 dark:fill-neutral-500' : 'fill-white dark:fill-black'} `} />
-            <IconMoon className={`mx-[3px] h-4.5 w-4.5 ${isdarkMode ? 'fill-white dark:fill-black' : 'fill-neutral-400 dark:fill-neutral-500'} `} />
+            <input type="checkbox" className="a11y-hidden" checked={isDarkTheme} onChange={handleCheck} />
+            <IconSun className={`mx-[3px] h-4.5 w-4.5 ${isDarkTheme ? 'fill-neutral-400 dark:fill-neutral-500' : 'fill-white dark:fill-black'} `} />
+            <IconMoon className={`mx-[3px] h-4.5 w-4.5 ${isDarkTheme ? 'fill-white dark:fill-black' : 'fill-neutral-400 dark:fill-neutral-500'} `} />
           </label>
         </div>
         <nav className="overflow-auto border-b border-neutral-200 dark:border-neutral-600" role="tablist">
