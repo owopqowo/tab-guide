@@ -11,14 +11,14 @@ function SubNav({ links, subActiveIndex }) {
   };
 
   return (
-    <nav className="py-2 shadow-lg shadow-neutral-200/50">
+    <nav className="py-2 shadow-lg shadow-neutral-200/50 dark:shadow-neutral-900/50">
       <div className="-mx-1 flex w-fit px-3">
         {links.map((link, index) => (
           <a
             key={link.key}
             href={link.href}
             className={`mx-1 flex-auto rounded-full px-2 py-1 text-sm whitespace-nowrap transition ${
-              subActiveIndex === index ? 'bg-black text-white' : ''
+              subActiveIndex === index ? 'bg-black text-white dark:bg-white dark:text-black' : ''
             }`}
             onClick={(event) => handleClick(event, link.href)}
             aria-selected={subActiveIndex === index}

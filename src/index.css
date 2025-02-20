@@ -4,6 +4,14 @@
   --default-font-family: 'Pretendard';
 }
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base {
+  body {
+    @apply bg-white text-black dark:bg-neutral-800 dark:text-white;
+  }
+}
+
 .a11y-hidden {
   clip: rect(0, 0, 0, 0);
   clip-path: circle(0);

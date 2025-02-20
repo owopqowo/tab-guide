@@ -31,7 +31,7 @@ function Article({ id, title, sections, setSubActiveIndex }) {
               <React.Fragment key={`${section.key}-${index}`}>
                 {item.type === 'text' && (
                   <p
-                    className="mx-auto mt-4 max-w-3xl text-left text-neutral-800"
+                    className="mx-auto mt-4 max-w-3xl text-left text-neutral-800 dark:text-neutral-300"
                     dangerouslySetInnerHTML={{ __html: item.content }}
                   ></p>
                 )}
