@@ -25,9 +25,9 @@ const tabs = [
 ];
 
 function App() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [mainActiveIndex, setMainActiveIndex] = useState(0);
   const [subActiveIndex, setSubActiveIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isTopButtonVisible, setIsTopButtonVisible] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
   const tabRefs = useRef([]);
 
@@ -37,7 +37,7 @@ function App() {
   }
 
   const handleClick = (index) => {
-    setActiveIndex(index);
+    setMainActiveIndex(index);
     setSubActiveIndex(0);
     tabRefs.current[index]?.scrollIntoView({ behavior: 'smooth' });
     window.scrollTo({ top: 0 });
@@ -58,9 +58,9 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > document.querySelector('#header').offsetHeight) {
-        setIsVisible(true);
+        setIsTopButtonVisible(true);
       } else {
-        setIsVisible(false);
+        setIsTopButtonVisible(false);
       }
     };
 
@@ -95,11 +95,11 @@ function App() {
                   key={tab.key}
                   type="button"
                   className={`relative flex-auto cursor-pointer px-2 py-4 whitespace-nowrap after:absolute after:right-0 after:bottom-0 after:left-0 after:h-1 after:w-full after:bg-black after:content-[''] ${
-                    activeIndex === index ? 'font-bold after:bg-black dark:after:bg-white' : 'after:bg-transparent'
+                    mainActiveIndex === index ? 'font-bold after:bg-black dark:after:bg-white' : 'after:bg-transparent'
                   }`}
                   onClick={() => handleClick(index)}
                   role="tab"
-                  aria-selected={activeIndex === index}
+                  aria-selected={mainActiveIndex === index}
                   aria-controls={tab.key}
                 >
                   {tab.label}
@@ -110,17 +110,17 @@ function App() {
         </nav>
         <SubNav
           subActiveIndex={subActiveIndex}
-          links={tabs[activeIndex].data.map(({ id, label }) => ({ key: id, href: `#${id}`, label }))}
+          links={tabs[mainActiveIndex].data.map(({ id, label }) => ({ key: id, href: `#${id}`, label }))}
         />
       </header>
       <TabPanel
-        id={tabs[activeIndex].key}
+        id={tabs[mainActiveIndex].key}
         setSubActiveIndex={setSubActiveIndex}
-        sectionsData={tabs[activeIndex].data}
+        sectionsData={tabs[mainActiveIndex].data}
       />
       <button
         type="button"
-        className={`fixed right-4 bottom-4 cursor-pointer rounded-full border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800 p-3 transition-all ${isVisible ? 'visible opacity-100' : 'invisible opacity-0'}`}
+        className={`fixed right-4 bottom-4 cursor-pointer rounded-full border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800 p-3 transition-all ${isTopButtonVisible ? 'visible opacity-100' : 'invisible opacity-0'}`}
         onClick={scrollToTop}
       >
         <IconArrowUp className="h-8 w-8 fill-gray-800 dark:fill-gray-100" />
