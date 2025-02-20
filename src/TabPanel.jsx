@@ -2,7 +2,7 @@ import Article from './Article';
 
 function TabPanel({ id, sectionsData, setSubActiveIndex }) {
   return (
-    <div id={id} role="tabpanel" tabIndex="0">
+    <div id={id} role="tabpanel" tabIndex="0" className='pb-12'>
       {sectionsData.map(({ id, label, sections }) => (
         <Article key={id} id={id} title={label} sections={sections} setSubActiveIndex={setSubActiveIndex} />
       ))}
