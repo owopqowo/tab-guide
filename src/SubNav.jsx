@@ -1,4 +1,8 @@
-function SubNav({ links, subActiveIndex }) {
+import { useRef } from 'react';
+
+function SubNav({ links, subActiveIndex, scrollDirection }) {
+  const clickedRef = useRef(false);
+
   const handleClick = (event, id) => {
     event.preventDefault();
     const targetElement = document.querySelector(id);
@@ -8,10 +12,19 @@ function SubNav({ links, subActiveIndex }) {
       const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({ top: targetPosition - headerHeight, behavior: 'smooth' });
     }
+
+    if (!clickedRef.current) {
+      clickedRef.current = true;
+      setTimeout(() => {
+        clickedRef.current = false;
+      }, 1000);
+    }
   };
 
   return (
-    <nav className="py-2 shadow-lg shadow-neutral-200/50 dark:shadow-neutral-900/50">
+    <nav
+      className={`fixed top-[99px] right-0 left-0 z-40 bg-white py-2 shadow-lg shadow-neutral-200/50 transition-transform dark:bg-neutral-800 dark:shadow-neutral-900/50 ${clickedRef.current || scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'}`}
+    >
       <div className="-mx-1 flex w-fit px-3">
         {links.map((link, index) => (
           <a

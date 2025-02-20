@@ -29,6 +29,7 @@ function App() {
   const [subActiveIndex, setSubActiveIndex] = useState(0);
   const [isTopButtonVisible, setIsTopButtonVisible] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const [scrollDirection, setScrollDirection] = useState(null);
   const tabRefs = useRef([]);
 
   const setTheme = (isDarkTheme) => {
@@ -56,6 +57,7 @@ function App() {
   };
 
   useEffect(() => {
+    let lastScrollPosition;
     const handleScroll = () => {
       if (window.scrollY > document.querySelector('#header').offsetHeight) {
         setIsTopButtonVisible(true);
@@ -64,7 +66,17 @@ function App() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', () => {
+      handleScroll();
+
+      if (window.scrollY > lastScrollPosition) {
+        setScrollDirection('down');
+      } else {
+        setScrollDirection('up');
+      }
+
+      lastScrollPosition = window.scrollY;
+    });
 
     setTheme(isDarkTheme);
 
@@ -75,7 +87,7 @@ function App() {
 
   return (
     <>
-      <header id="header" className="sticky top-0 bg-white dark:bg-neutral-800">
+      <header id="header" className="sticky top-0 z-50 bg-white dark:bg-neutral-800">
         <div className="flex items-center justify-between px-3 py-1.5">
           <h1 className="text-xl">이용 안내</h1>
           <label
@@ -112,11 +124,12 @@ function App() {
             })}
           </div>
         </nav>
-        <SubNav
-          subActiveIndex={subActiveIndex}
-          links={tabs[mainActiveIndex].data.map(({ id, label }) => ({ key: id, href: `#${id}`, label }))}
-        />
       </header>
+      <SubNav
+        subActiveIndex={subActiveIndex}
+        links={tabs[mainActiveIndex].data.map(({ id, label }) => ({ key: id, href: `#${id}`, label }))}
+        scrollDirection={scrollDirection}
+      />
       <TabPanel
         id={tabs[mainActiveIndex].key}
         setSubActiveIndex={setSubActiveIndex}
