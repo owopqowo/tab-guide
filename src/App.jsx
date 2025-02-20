@@ -33,8 +33,8 @@ function App() {
 
   const setTheme = (isDarkTheme) => {
     const htmlElement = document.documentElement;
-    htmlElement.setAttribute("data-theme", isDarkTheme ? "dark" : "light");
-  }
+    htmlElement.setAttribute('data-theme', isDarkTheme ? 'dark' : 'light');
+  };
 
   const handleClick = (index) => {
     setMainActiveIndex(index);
@@ -79,11 +79,15 @@ function App() {
         <div className="flex items-center justify-between px-3 py-1.5">
           <h1 className="text-xl">이용 안내</h1>
           <label
-            className={`relative z-0 flex h-7.5 w-15 cursor-pointer items-center justify-between rounded-full border-1 border-neutral-400 dark:border-neutral-500 p-0.5 before:absolute before:-z-10 before:h-6 before:w-6 before:rounded-full before:bg-black dark:before:bg-white before:transition-transform before:content-[''] ${isDarkTheme ? 'before:translate-x-7.5' : ''}`}
+            className={`relative z-0 flex h-7.5 w-15 cursor-pointer items-center justify-between rounded-full border-1 border-neutral-400 p-0.5 before:absolute before:-z-10 before:h-6 before:w-6 before:rounded-full before:bg-black before:transition-transform before:content-[''] dark:border-neutral-500 dark:before:bg-white ${isDarkTheme ? 'before:translate-x-7.5' : ''}`}
           >
             <input type="checkbox" className="a11y-hidden" checked={isDarkTheme} onChange={handleCheck} />
-            <IconSun className={`mx-[3px] h-4.5 w-4.5 ${isDarkTheme ? 'fill-neutral-400 dark:fill-neutral-500' : 'fill-white dark:fill-black'} `} />
-            <IconMoon className={`mx-[3px] h-4.5 w-4.5 ${isDarkTheme ? 'fill-white dark:fill-black' : 'fill-neutral-400 dark:fill-neutral-500'} `} />
+            <IconSun
+              className={`mx-[3px] h-4.5 w-4.5 ${isDarkTheme ? 'fill-neutral-400 dark:fill-neutral-500' : 'fill-white dark:fill-black'} `}
+            />
+            <IconMoon
+              className={`mx-[3px] h-4.5 w-4.5 ${isDarkTheme ? 'fill-white dark:fill-black' : 'fill-neutral-400 dark:fill-neutral-500'} `}
+            />
           </label>
         </div>
         <nav className="overflow-auto border-b border-neutral-200 dark:border-neutral-600" role="tablist">
@@ -120,7 +124,7 @@ function App() {
       />
       <button
         type="button"
-        className={`fixed right-4 bottom-4 cursor-pointer rounded-full border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800 p-3 transition-all ${isTopButtonVisible ? 'visible opacity-100' : 'invisible opacity-0'}`}
+        className={`fixed right-4 bottom-4 cursor-pointer rounded-full border border-neutral-200 bg-white p-3 transition-all dark:border-neutral-600 dark:bg-neutral-800 ${isTopButtonVisible ? 'visible opacity-100' : 'invisible opacity-0'}`}
         onClick={scrollToTop}
       >
         <IconArrowUp className="h-8 w-8 fill-gray-800 dark:fill-gray-100" />
