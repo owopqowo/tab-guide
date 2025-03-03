@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import TabPanel from './TabPanel';
 import SubNav from './SubNav';
 import {
@@ -48,40 +48,49 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleCheck = () => {
-    setIsDarkTheme((prevTheme) => {
-      const updatedTheme = !prevTheme;
-      setTheme(updatedTheme);
-      return updatedTheme;
-    });
+  const handleThemeCheck = () => {
+    setIsDarkTheme((prevTheme) => !prevTheme);
   };
 
+  const toggleTopButtonVisibility = useCallback(() => {
+    if (window.scrollY > document.querySelector('#header').offsetHeight) {
+      setIsTopButtonVisible(true);
+    } else {
+      setIsTopButtonVisible(false);
+    }
+  }, []);
+
+  const detectScrollDirection = useCallback((lastScrollPosition) => {
+    if (window.scrollY > lastScrollPosition) {
+      setScrollDirection('down');
+    } else {
+      setScrollDirection('up');
+    }
+  }, []);
+
+  useEffect(() => {
+    setTheme(isDarkTheme);
+  }, [isDarkTheme]);
+
+  // 스크롤 동작
   useEffect(() => {
     let lastScrollPosition;
-    const handleScroll = () => {
-      if (window.scrollY > document.querySelector('#header').offsetHeight) {
-        setIsTopButtonVisible(true);
-      } else {
-        setIsTopButtonVisible(false);
-      }
-    };
 
     window.addEventListener('scroll', () => {
-      handleScroll();
+      const currentPageHeight = document.documentElement.scrollHeight;
+      if (window.scrollY < 0 || window.scrollY > currentPageHeight - window.innerHeight) return;
 
-      if (window.scrollY > lastScrollPosition) {
-        setScrollDirection('down');
-      } else {
-        setScrollDirection('up');
-      }
+      toggleTopButtonVisibility();
+      detectScrollDirection(lastScrollPosition);
 
       lastScrollPosition = window.scrollY;
     });
 
-    setTheme(isDarkTheme);
-
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', () => {
+        toggleTopButtonVisibility();
+        detectScrollDirection(lastScrollPosition);
+      });
     };
   }, []);
 
@@ -93,7 +102,7 @@ function App() {
           <label
             className={`relative z-0 flex h-7.5 w-15 cursor-pointer items-center justify-between rounded-full border-1 border-neutral-400 p-0.5 before:absolute before:-z-10 before:h-6 before:w-6 before:rounded-full before:bg-black before:transition-transform before:content-[''] dark:border-neutral-500 dark:before:bg-white ${isDarkTheme ? 'before:translate-x-7.5' : ''}`}
           >
-            <input type="checkbox" className="a11y-hidden" checked={isDarkTheme} onChange={handleCheck} />
+            <input type="checkbox" className="a11y-hidden" checked={isDarkTheme} onChange={handleThemeCheck} />
             <IconSun
               className={`mx-[3px] h-4.5 w-4.5 ${isDarkTheme ? 'fill-neutral-400 dark:fill-neutral-500' : 'fill-white dark:fill-black'} `}
             />

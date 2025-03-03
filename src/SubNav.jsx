@@ -23,7 +23,7 @@ function SubNav({ links, subActiveIndex, scrollDirection }) {
 
   return (
     <nav
-      className={`fixed top-[99px] right-0 left-0 z-40 bg-white py-2 shadow-lg shadow-neutral-200/50 transition-transform dark:bg-neutral-800 dark:shadow-neutral-900/50 ${clickedRef.current || scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'}`}
+      className={`sticky top-[99px] right-0 left-0 z-40 bg-white py-2 shadow-lg shadow-neutral-200/50 transition-transform dark:bg-neutral-800 dark:shadow-neutral-900/50 ${clickedRef.current || scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'}`}
     >
       <div className="-mx-1 flex w-fit px-3">
         {links.map((link, index) => (
