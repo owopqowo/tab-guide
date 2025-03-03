@@ -6,7 +6,7 @@ export const cardApplication = [
       {
         key: 'apply1',
         items: [
-          { type: 'image', content: '/images/pink-01.jpg' },
+          { type: 'image', content: './images/pink-01.jpg' },
           {
             type: 'text',
             content:
@@ -17,7 +17,7 @@ export const cardApplication = [
       {
         key: 'apply2',
         items: [
-          { type: 'image', content: '/images/pink-02.jpg' },
+          { type: 'image', content: './images/pink-02.jpg' },
           {
             type: 'text',
             content:
@@ -34,8 +34,8 @@ export const cardApplication = [
       {
         key: 'types1',
         items: [
-          { type: 'image', content: '/images/pink-03.jpg' },
-          { type: 'image', content: '/images/pink-04.jpg' },
+          { type: 'image', content: './images/pink-03.jpg' },
+          { type: 'image', content: './images/pink-04.jpg' },
           {
             type: 'text',
             content:
@@ -46,7 +46,7 @@ export const cardApplication = [
       {
         key: 'types2',
         items: [
-          { type: 'image', content: '/images/pink-05.jpg' },
+          { type: 'image', content: './images/pink-05.jpg' },
           {
             type: 'text',
             content:
@@ -57,7 +57,7 @@ export const cardApplication = [
       {
         key: 'types3',
         items: [
-          { type: 'image', content: '/images/pink-06.jpg' },
+          { type: 'image', content: './images/pink-06.jpg' },
           {
             type: 'text',
             content:
@@ -74,7 +74,7 @@ export const cardApplication = [
       {
         key: 'period1',
         items: [
-          { type: 'image', content: '/images/pink-07.jpg' },
+          { type: 'image', content: './images/pink-07.jpg' },
           {
             type: 'text',
             content:
@@ -85,7 +85,7 @@ export const cardApplication = [
       {
         key: 'period2',
         items: [
-          { type: 'image', content: '/images/pink-08.jpg' },
+          { type: 'image', content: './images/pink-08.jpg' },
           {
             type: 'text',
             content:
@@ -96,13 +96,13 @@ export const cardApplication = [
       {
         key: 'period3',
         items: [
-          { type: 'image', content: '/images/pink-09.jpg' },
+          { type: 'image', content: './images/pink-09.jpg' },
           {
             type: 'text',
             content:
               '탄핵소추의 의결을 받은 자는 탄핵심판이 있을 때까지 그 권한행사가 정지된다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 모든 국민은 능력에 따라 균등하게 교육을 받을 권리를 가진다.<br />국토와 자원은 국가의 보호를 받으며, 국가는 그 균형있는 개발과 이용을 위하여 필요한 계획을 수립한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.<br />정부는 예산에 변경을 가할 필요가 있을 때에는 추가경정예산안을 편성하여 국회에 제출할 수 있다. 정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다.<br />국회는 국무총리 또는 국무위원의 해임을 대통령에게 건의할 수 있다. 국가안전보장에 관련되는 대외정책·군사정책과 국내정책의 수립에 관하여 국무회의의 심의에 앞서 대통령의 자문에 응하기 위하여 국가안전보장회의를 둔다.<br />대통령은 법률에서 구체적으로 범위를 정하여 위임받은 사항과 법률을 집행하기 위하여 필요한 사항에 관하여 대통령령을 발할 수 있다. 전직대통령의 신분과 예우에 관하여는 법률로 정한다.',
           },
-          { type: 'image', content: '/images/pink-10.jpg' },
+          { type: 'image', content: './images/pink-10.jpg' },
         ],
       },
     ],
@@ -117,7 +117,7 @@ export const cardRecharge = [
       {
         key: 'charge1',
         items: [
-          { type: 'image', content: '/images/red-01.jpg' },
+          { type: 'image', content: './images/red-01.jpg' },
           {
             type: 'text',
             content:
@@ -128,7 +128,7 @@ export const cardRecharge = [
       {
         key: 'charge2',
         items: [
-          { type: 'image', content: '/images/red-02.jpg' },
+          { type: 'image', content: './images/red-02.jpg' },
           {
             type: 'text',
             content:
@@ -139,13 +139,13 @@ export const cardRecharge = [
       {
         key: 'charge3',
         items: [
-          { type: 'image', content: '/images/red-03.jpg' },
+          { type: 'image', content: './images/red-03.jpg' },
           {
             type: 'text',
             content:
               '국가는 여자의 복지와 권익의 향상을 위하여 노력하여야 한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다. 국무회의는 정부의 권한에 속하는 중요한 정책을 심의한다.<br />국무총리는 국회의 동의를 얻어 대통령이 임명한다. 비상계엄이 선포된 때에는 법률이 정하는 바에 의하여 영장제도, 언론·출판·집회·결사의 자유, 정부나 법원의 권한에 관하여 특별한 조치를 할 수 있다.<br />공무원의 신분과 정치적 중립성은 법률이 정하는 바에 의하여 보장된다. 대통령으로 선거될 수 있는 자는 국회의원의 피선거권이 있고 선거일 현재 40세에 달하여야 한다.<br />선거에 관한 경비는 법률이 정하는 경우를 제외하고는 정당 또는 후보자에게 부담시킬 수 없다. 국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다.',
           },
-          { type: 'image', content: '/images/red-04.jpg' },
+          { type: 'image', content: './images/red-04.jpg' },
         ],
       },
     ],
@@ -157,7 +157,7 @@ export const cardRecharge = [
       {
         key: 'minMax1',
         items: [
-          { type: 'image', content: '/images/red-05.jpg' },
+          { type: 'image', content: './images/red-05.jpg' },
           {
             type: 'text',
             content:
@@ -168,7 +168,7 @@ export const cardRecharge = [
       {
         key: 'minMax2',
         items: [
-          { type: 'image', content: '/images/red-06.jpg' },
+          { type: 'image', content: './images/red-06.jpg' },
           {
             type: 'text',
             content:
@@ -179,7 +179,7 @@ export const cardRecharge = [
       {
         key: 'minMax3',
         items: [
-          { type: 'image', content: '/images/red-07.jpg' },
+          { type: 'image', content: './images/red-07.jpg' },
           {
             type: 'text',
             content:
@@ -190,7 +190,7 @@ export const cardRecharge = [
       {
         key: 'minMax4',
         items: [
-          { type: 'image', content: '/images/red-08.jpg' },
+          { type: 'image', content: './images/red-08.jpg' },
           {
             type: 'text',
             content:
@@ -207,20 +207,20 @@ export const cardRecharge = [
       {
         key: 'limit1',
         items: [
-          { type: 'image', content: '/images/red-09.jpg' },
-          { type: 'image', content: '/images/red-10.jpg' },
+          { type: 'image', content: './images/red-09.jpg' },
+          { type: 'image', content: './images/red-10.jpg' },
           {
             type: 'text',
             content:
               '대통령은 제4항과 제5항의 규정에 의하여 확정된 법률을 지체없이 공포하여야 한다. 제5항에 의하여 법률이 확정된 후 또는 제4항에 의한 확정법률이 정부에 이송된 후 5일 이내에 대통령이 공포하지 아니할 때에는 국회의장이 이를 공포한다.<br />공개하지 아니한 회의내용의 공표에 관하여는 법률이 정하는 바에 의한다.<br />형사피의자 또는 형사피고인으로서 구금되었던 자가 법률이 정하는 불기소처분을 받거나 무죄판결을 받은 때에는 법률이 정하는 바에 의하여 국가에 정당한 보상을 청구할 수 있다.',
           },
-          { type: 'image', content: '/images/red-11.jpg' },
+          { type: 'image', content: './images/red-11.jpg' },
         ],
       },
       {
         key: 'limit2',
         items: [
-          { type: 'image', content: '/images/red-12.jpg' },
+          { type: 'image', content: './images/red-12.jpg' },
           {
             type: 'text',
             content:
@@ -237,7 +237,7 @@ export const cardRecharge = [
       {
         key: 'reserve1',
         items: [
-          { type: 'image', content: '/images/red-13.jpg' },
+          { type: 'image', content: './images/red-13.jpg' },
           {
             type: 'text',
             content:
@@ -248,7 +248,7 @@ export const cardRecharge = [
       {
         key: 'reserve2',
         items: [
-          { type: 'image', content: '/images/red-14.jpg' },
+          { type: 'image', content: './images/red-14.jpg' },
           {
             type: 'text',
             content:
@@ -268,7 +268,7 @@ export const usageGuide = [
       {
         key: 'places1',
         items: [
-          { type: 'image', content: '/images/purple-01.jpg' },
+          { type: 'image', content: './images/purple-01.jpg' },
           {
             type: 'text',
             content:
@@ -279,19 +279,19 @@ export const usageGuide = [
       {
         key: 'places2',
         items: [
-          { type: 'image', content: '/images/purple-02.jpg' },
+          { type: 'image', content: './images/purple-02.jpg' },
           {
             type: 'text',
             content:
               '헌법재판소는 법률에 저촉되지 아니하는 범위안에서 심판에 관한 절차, 내부규율과 사무처리에 관한 규칙을 제정할 수 있다.<br />정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다.<br />모든 국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익한 처우를 받지 아니한다.<br />누구든지 병역의무의 이행으로 인하여 불이익한 처우를 받지 아니한다.',
           },
-          { type: 'image', content: '/images/purple-03.jpg' },
+          { type: 'image', content: './images/purple-03.jpg' },
         ],
       },
       {
         key: 'places3',
         items: [
-          { type: 'image', content: '/images/purple-04.jpg' },
+          { type: 'image', content: './images/purple-04.jpg' },
           {
             type: 'text',
             content:
@@ -308,7 +308,7 @@ export const usageGuide = [
       {
         key: 'restrictions1',
         items: [
-          { type: 'image', content: '/images/purple-05.jpg' },
+          { type: 'image', content: './images/purple-05.jpg' },
           {
             type: 'text',
             content:
@@ -319,7 +319,7 @@ export const usageGuide = [
       {
         key: 'restrictions2',
         items: [
-          { type: 'image', content: '/images/purple-06.jpg' },
+          { type: 'image', content: './images/purple-06.jpg' },
           {
             type: 'text',
             content:
@@ -330,7 +330,7 @@ export const usageGuide = [
       {
         key: 'restrictions3',
         items: [
-          { type: 'image', content: '/images/purple-07.jpg' },
+          { type: 'image', content: './images/purple-07.jpg' },
           {
             type: 'text',
             content:
@@ -350,7 +350,7 @@ export const balanceCheck = [
       {
         key: 'inquiry1',
         items: [
-          { type: 'image', content: '/images/green-01.jpg' },
+          { type: 'image', content: './images/green-01.jpg' },
           {
             type: 'text',
             content:
@@ -361,8 +361,8 @@ export const balanceCheck = [
       {
         key: 'inquiry2',
         items: [
-          { type: 'image', content: '/images/green-02.jpg' },
-          { type: 'image', content: '/images/green-03.jpg' },
+          { type: 'image', content: './images/green-02.jpg' },
+          { type: 'image', content: './images/green-03.jpg' },
           {
             type: 'text',
             content:
@@ -373,7 +373,7 @@ export const balanceCheck = [
       {
         key: 'inquiry3',
         items: [
-          { type: 'image', content: '/images/green-04.jpg' },
+          { type: 'image', content: './images/green-04.jpg' },
           {
             type: 'text',
             content:
@@ -384,7 +384,7 @@ export const balanceCheck = [
       {
         key: 'inquiry4',
         items: [
-          { type: 'image', content: '/images/green-05.jpg' },
+          { type: 'image', content: './images/green-05.jpg' },
           {
             type: 'text',
             content:
@@ -401,7 +401,7 @@ export const balanceCheck = [
       {
         key: 'notification1',
         items: [
-          { type: 'image', content: '/images/green-06.jpg' },
+          { type: 'image', content: './images/green-06.jpg' },
           {
             type: 'text',
             content:
@@ -412,7 +412,7 @@ export const balanceCheck = [
       {
         key: 'notification2',
         items: [
-          { type: 'image', content: '/images/green-07.jpg' },
+          { type: 'image', content: './images/green-07.jpg' },
           {
             type: 'text',
             content:
@@ -423,8 +423,8 @@ export const balanceCheck = [
       {
         key: 'notification3',
         items: [
-          { type: 'image', content: '/images/green-08.jpg' },
-          { type: 'image', content: '/images/green-09.jpg' },
+          { type: 'image', content: './images/green-08.jpg' },
+          { type: 'image', content: './images/green-09.jpg' },
           {
             type: 'text',
             content:
@@ -444,7 +444,7 @@ export const cardManagement = [
       {
         key: 'activation1',
         items: [
-          { type: 'image', content: '/images/beige-01.jpg' },
+          { type: 'image', content: './images/beige-01.jpg' },
           {
             type: 'text',
             content:
@@ -455,7 +455,7 @@ export const cardManagement = [
       {
         key: 'activation2',
         items: [
-          { type: 'image', content: '/images/beige-02.jpg' },
+          { type: 'image', content: './images/beige-02.jpg' },
           {
             type: 'text',
             content:
@@ -472,8 +472,8 @@ export const cardManagement = [
       {
         key: 'report1',
         items: [
-          { type: 'image', content: '/images/beige-03.jpg' },
-          { type: 'image', content: '/images/beige-04.jpg' },
+          { type: 'image', content: './images/beige-03.jpg' },
+          { type: 'image', content: './images/beige-04.jpg' },
           {
             type: 'text',
             content:
@@ -484,8 +484,8 @@ export const cardManagement = [
       {
         key: 'report2',
         items: [
-          { type: 'image', content: '/images/beige-05.jpg' },
-          { type: 'image', content: '/images/beige-06.jpg' },
+          { type: 'image', content: './images/beige-05.jpg' },
+          { type: 'image', content: './images/beige-06.jpg' },
           {
             type: 'text',
             content:
@@ -496,7 +496,7 @@ export const cardManagement = [
       {
         key: 'report3',
         items: [
-          { type: 'image', content: '/images/beige-07.jpg' },
+          { type: 'image', content: './images/beige-07.jpg' },
           {
             type: 'text',
             content:
@@ -513,7 +513,7 @@ export const cardManagement = [
       {
         key: 'password1',
         items: [
-          { type: 'image', content: '/images/beige-08.jpg' },
+          { type: 'image', content: './images/beige-08.jpg' },
           {
             type: 'text',
             content:
@@ -524,8 +524,8 @@ export const cardManagement = [
       {
         key: 'password2',
         items: [
-          { type: 'image', content: '/images/beige-09.jpg' },
-          { type: 'image', content: '/images/beige-10.jpg' },
+          { type: 'image', content: './images/beige-09.jpg' },
+          { type: 'image', content: './images/beige-10.jpg' },
           {
             type: 'text',
             content:
@@ -536,7 +536,7 @@ export const cardManagement = [
       {
         key: 'password3',
         items: [
-          { type: 'image', content: '/images/beige-11.jpg' },
+          { type: 'image', content: './images/beige-11.jpg' },
           {
             type: 'text',
             content:
@@ -556,8 +556,8 @@ export const paymentRefund = [
       {
         key: 'payment1',
         items: [
-          { type: 'image', content: '/images/gray-01.jpg' },
-          { type: 'image', content: '/images/gray-02.jpg' },
+          { type: 'image', content: './images/gray-01.jpg' },
+          { type: 'image', content: './images/gray-02.jpg' },
           {
             type: 'text',
             content:
@@ -574,7 +574,7 @@ export const paymentRefund = [
       {
         key: 'policies1',
         items: [
-          { type: 'image', content: '/images/gray-03.jpg' },
+          { type: 'image', content: './images/gray-03.jpg' },
           {
             type: 'text',
             content:
@@ -585,7 +585,7 @@ export const paymentRefund = [
       {
         key: 'policies2',
         items: [
-          { type: 'image', content: '/images/gray-04.jpg' },
+          { type: 'image', content: './images/gray-04.jpg' },
           {
             type: 'text',
             content:
@@ -596,7 +596,7 @@ export const paymentRefund = [
       {
         key: 'policies3',
         items: [
-          { type: 'image', content: '/images/gray-05.jpg' },
+          { type: 'image', content: './images/gray-05.jpg' },
           {
             type: 'text',
             content:
@@ -607,7 +607,7 @@ export const paymentRefund = [
       {
         key: 'policies4',
         items: [
-          { type: 'image', content: '/images/gray-06.jpg' },
+          { type: 'image', content: './images/gray-06.jpg' },
           {
             type: 'text',
             content:
@@ -618,7 +618,7 @@ export const paymentRefund = [
       {
         key: 'policies5',
         items: [
-          { type: 'image', content: '/images/gray-07.jpg' },
+          { type: 'image', content: './images/gray-07.jpg' },
           {
             type: 'text',
             content:
@@ -638,8 +638,8 @@ export const convenienceFeatures = [
       {
         key: 'auto1',
         items: [
-          { type: 'image', content: '/images/brown-01.jpg' },
-          { type: 'image', content: '/images/brown-02.jpg' },
+          { type: 'image', content: './images/brown-01.jpg' },
+          { type: 'image', content: './images/brown-02.jpg' },
           {
             type: 'text',
             content:
@@ -650,7 +650,7 @@ export const convenienceFeatures = [
       {
         key: 'auto2',
         items: [
-          { type: 'image', content: '/images/brown-03.jpg' },
+          { type: 'image', content: './images/brown-03.jpg' },
           {
             type: 'text',
             content:
@@ -667,7 +667,7 @@ export const convenienceFeatures = [
       {
         key: 'analysis1',
         items: [
-          { type: 'image', content: '/images/brown-04.jpg' },
+          { type: 'image', content: './images/brown-04.jpg' },
           {
             type: 'text',
             content:
@@ -678,7 +678,7 @@ export const convenienceFeatures = [
       {
         key: 'analysis2',
         items: [
-          { type: 'image', content: '/images/brown-05.jpg' },
+          { type: 'image', content: './images/brown-05.jpg' },
           {
             type: 'text',
             content:
@@ -689,8 +689,8 @@ export const convenienceFeatures = [
       {
         key: 'analysis3',
         items: [
-          { type: 'image', content: '/images/brown-06.jpg' },
-          { type: 'image', content: '/images/brown-07.jpg' },
+          { type: 'image', content: './images/brown-06.jpg' },
+          { type: 'image', content: './images/brown-07.jpg' },
           {
             type: 'text',
             content:
@@ -701,7 +701,7 @@ export const convenienceFeatures = [
       {
         key: 'analysis4',
         items: [
-          { type: 'image', content: '/images/brown-08.jpg' },
+          { type: 'image', content: './images/brown-08.jpg' },
           {
             type: 'text',
             content:
@@ -718,7 +718,7 @@ export const convenienceFeatures = [
       {
         key: 'card1',
         items: [
-          { type: 'image', content: '/images/brown-09.jpg' },
+          { type: 'image', content: './images/brown-09.jpg' },
           {
             type: 'text',
             content:
@@ -729,7 +729,7 @@ export const convenienceFeatures = [
       {
         key: 'card2',
         items: [
-          { type: 'image', content: '/images/brown-10.jpg' },
+          { type: 'image', content: './images/brown-10.jpg' },
           {
             type: 'text',
             content:
